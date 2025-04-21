@@ -1,5 +1,6 @@
 import os
 import shutil
+import time
 
 #external library
 from watchdog.observers import Observer
@@ -99,5 +100,44 @@ class FileOrganizerHandler(FileSystemEventHandler):
 
 #watch file change in folder
 def watch_folder(path):
-    
 
+    #create object of Fi
+    event_handler = FileOrganizerHandler()
+
+    observer = Observer()
+
+    '''
+       1.observer is used to watch file changes in directory
+       2.schedule if observer's function in which arugment pass which tell that
+        "Hey, watch this folder and use this handler to respond to any changes."
+       3.path used to tell which directory to watch for changes
+       4.recursive=False: Means "Only watch this folder, not its subfolders."
+    '''
+    observer.schedule(event_handler,path,recursive=False)
+    observer.start()
+
+    try:
+        '''
+        this infinite loop which keep script alive so it keep running
+        '''
+        while True:
+            time.sleep(10)
+
+    #stop the script if Ctrl + C pressed which will raise KeyboardInterrupt exception
+    except KeyboardInterrupt:
+        observer.stop()
+
+    '''
+    This tells Python:
+        "Wait here until the observer has fully stopped before exiting the program."
+    '''
+    observer.join()
+
+
+'''
+This is Python’s way of saying:
+"Only run this part if the script is being run directly, not if it's being imported as a module into another script."
+'''
+
+if __name__ == "__main__":
+    watch_folder(SOURCE_FOLDER)
