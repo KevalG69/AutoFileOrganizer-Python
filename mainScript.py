@@ -9,18 +9,18 @@ from watchdog.events import FileSystemEventHandler
 
 
 #source folder
-SOURCE_FOLDER = "D:\downloaded"
+SOURCE_FOLDER = r"D:\downloaded"
 
 #making dictionary of destination folder path to move file with particular extensions
 
 dest_folders = {
-    "pdf" :"D:\downloaded\Project\AutoFileOrganizer\Organized\PDFs",
+    "pdf" :r"D:\downloaded\Project\AutoFileOrganizer\Organized\PDFs",
 
-    "png" :"D:\downloaded\Project\AutoFileOrganizer\Organized\Images",
-    "jpg" :"D:\downloaded\Project\AutoFileOrganizer\Organized\Images",
-    "jpeg" :"D:\downloaded\Project\AutoFileOrganizer\Organized\Images",
-    "txt" :"D:\downloaded\Project\AutoFileOrganizer\Organized\TextFiles",
-    "tmp" :"D:\downloaded\Project\AutoFileOrganizer\Organized\Trash"
+    "png" :r"D:\downloaded\Project\AutoFileOrganizer\Organized\Images",
+    "jpg" :r"D:\downloaded\Project\AutoFileOrganizer\Organized\Images",
+    "jpeg" :r"D:\downloaded\Project\AutoFileOrganizer\Organized\Images",
+    "txt" :r"D:\downloaded\Project\AutoFileOrganizer\Organized\TextFiles",
+    "tmp" :r"D:\downloaded\Project\AutoFileOrganizer\Organized\Trash"
     
 }
 
@@ -34,15 +34,15 @@ for folder in dest_folders.values():
 def organize_file():
 
     #iterating through file in directory   
-    '''--> 1.iterate to all file available in D:\donwloaded or SOURCE_FOLDER '''
+    r'''r--> 1.iterate to all file available in D: donwloaded or SOURCE_FOLDER '''
     for fileName in os.listdir(SOURCE_FOLDER):
 
         '''
-        --> 2.Get proper file path like D:\donwloaded\test.txt to do operations
+        --> 2.Get proper file path like D: donwloaded test.txt to do operations
 
-            os.path.join() is used to make file path using "\" according to operating
+            os path join is used to make file path using \ according to operating
             systeme so don't have to create manually like this
-                SOURCE_FOLDER + "\" + fileName
+                SOURCE_FOLDER + \ + fileName
             
             it will automatically add \ or /
             like if SOURCE_FOLDER = "D:\downloaded"

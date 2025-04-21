@@ -1,0 +1,33 @@
+1.full stack web development-1
+2.trading-2
+3.exam-1
+4.assigments/books-1
+5.project-1
+6.books-2
+7.health-excersize,mental health -1 matrial arts-2
+8.soft skills - communication,learning pychology-2
+9.ux/ui design-1
+10.mathematics-2
+11.python-3
+12.ml-3
+13.deep learning-3
+14.dsa-1
+
+1.full stack web development
+2.project
+3.ux/ui design
+
+4.dsa
+10.mathematics
+
+5.exam
+6.assigments/books
+
+7.health-excersize,mental health
+
+1.12
+2.wake up ex meditate
+3.exam 
+4.assigments/books
+5.mathematics/dsa
+6.project/full stack/ux/ui design

@@ -1,0 +1,8 @@
+1.Mathematics
+	1. Linear algebra
+	2.Probability & Statistics
+	3.calculus
+2.python,js
+	libraries
+3.machine learning
+4.deep learning
